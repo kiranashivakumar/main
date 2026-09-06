@@ -252,8 +252,11 @@ public class UsageInsightPage {
 		  } catch(NoSuchElementException e)
 		  {
 			  System.out.println("No projects are they to create the tasks");
+			  System.out.println(e.getMessage());
 		  }
+		  
 		  }
+	  
 		  
 	  }
 	  
