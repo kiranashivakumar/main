@@ -22,11 +22,11 @@ public class UsageInsightTest extends BaseTest {
 	@Test 
 	public void usageInsight() throws InterruptedException
 	   {
-//		loginPage.login(ConfigReader.get("username"),
-//        		ConfigReader.get("password"));
-//		loginPage.ClickOrgDropdown();
-//		usageInsightPage.clickOrganisationModule();
-		usageInsightPage.createTask();
+		loginPage.login(ConfigReader.get("username"),
+       		ConfigReader.get("password"));
+		loginPage.ClickOrgDropdown();
+		usageInsightPage.clickOrganisationModule();
+//		usageInsightPage.createTask();
 //		usageInsightPage.searchMemberonUsageInsight("qhGcz");
 		
 	   }

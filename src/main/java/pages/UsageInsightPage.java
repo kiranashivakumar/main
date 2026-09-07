@@ -138,10 +138,10 @@ public class UsageInsightPage {
 		 wait.until(ExpectedConditions.visibilityOf(driver.findElement(username)));
 		 loginPage.login(memberEmail, "Admin@123");	 
 	 }
-	 
 	 public void signOutSignIn()
 	 {
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		 wait.until(ExpectedConditions.elementToBeClickable(clickMayBeLater));
 		 driver.findElement(clickMayBeLater).click();
 		 wait.until(ExpectedConditions.elementToBeClickable(menu));
 		 driver.findElement(menu).click();
@@ -157,7 +157,6 @@ public class UsageInsightPage {
 		 wait.until(ExpectedConditions.presenceOfElementLocated(dashboardBtn));
 		 driver.findElement(dashboardBtn).click();
 		 wait.until(ExpectedConditions.urlContains("https://ralvie.minervaiotstaging.com/app/dashboard"));
-		 
 	 }
 	  public void clickOrganisationModule() 
 	  {
@@ -185,12 +184,10 @@ public class UsageInsightPage {
 		          String fetchMemberName = member.getText().trim();
 		          if (fetchMemberName.equalsIgnoreCase(searchMember)) {
 		        	  WebElement row = member.findElement(By.xpath("./ancestor::tr"));
-
 		              // Get Total Score from same row
 		              memberScore = row.findElement(By.xpath("./td[5]"))
 		                               .getText()
 		                               .trim();
-		             
 		              memberFound = true;
 		              
 		              break;
@@ -203,12 +200,9 @@ public class UsageInsightPage {
 		      WebElement nextButton = driver.findElement(nextBtn);
 		      if (!nextButton.isEnabled() ||
 		          nextButton.getAttribute("disabled") != null) {
-
 		          break;
 		      }
 		      nextButton.click();
-		      
-		      
 		  } 
 		  if (!memberFound) {
 
